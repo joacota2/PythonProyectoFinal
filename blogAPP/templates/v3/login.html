@@ -1,0 +1,21 @@
+{% extends 'AppCoder/index.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+<title>Login</title>
+
+</head>
+<body>
+
+    <form action="" method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">iniciar sesion</button>
+    <a class="navbar-brand" href="http://127.0.0.1:8000/register">Registro</a>
+
+</form>
+</body>
+</html>
+{% endblock content %}

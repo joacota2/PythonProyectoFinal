@@ -1,0 +1,25 @@
+{% extends 'AppCoder/base.html' %}
+{% load static %}
+{% block content %}
+<div style="margin: 20px 0 ; text-align:center">
+
+    <form action='/search' method='POST'>
+        {% csrf_token %}
+        <input type='number' name="camada" >
+        <input type="submit" value="Enviar">
+    </form>
+    
+    {% if elements%}
+    <h1> Resultados </h1>
+
+        
+        {% for element in elements %}
+            <p>{{ element.nombre }}</p>
+            <p>{{ element.camada }}</p>
+        {% endfor %}
+
+
+    {% endif %}
+
+</div>
+{% endblock %}

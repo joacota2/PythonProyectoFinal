@@ -1,0 +1,22 @@
+{% extends 'AppCoder/index.html' %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<h1>
+    {{post1.title}}
+</h1>
+<small>Creado por:{{post1.author}} </small><br>
+<br>
+{%if post1.header_image%}
+<img src="{{post1.header_image.url}}"><br><br>
+{%endif%}
+{{ post1.body|safe }}
+
+<br>
+<br>
+<a href="{% url 'Blog' %}">Volver</a>
+{%else%}
+No deberias estar aca
+{%endif%}
+
+{% endblock content%}

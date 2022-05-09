@@ -1,0 +1,25 @@
+{% extends 'AppCoder/index.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+<title>Login</title>
+
+</head>
+<body>
+<h1>Add Post</h1>
+<br><br>
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{ form.media }}
+    {{ form.as_p }}
+    <button class="btn btn-secondary">Publicar
+    </button>
+   
+
+</form>
+</body>
+</html>
+{% endblock content %}

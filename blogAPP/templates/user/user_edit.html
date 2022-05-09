@@ -1,0 +1,17 @@
+{% extends 'AppCoder/index.html' %}
+{% load static %}
+{% block content %}
+
+    
+
+<h1> Editar Cuenta</h1>
+<br><br>
+<br>
+
+<br><br>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-secondary">Actualizar Perfil</button>
+</form>
+{% endblock content %}

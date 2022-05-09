@@ -1,0 +1,19 @@
+{% extends 'AppCoder/index.html' %}
+{% load static %}
+{% block content %}
+
+    
+<center>
+<h1> Editar Perfil</h1>
+{%if user.profile.profile_pic %}
+<img src="{{user.profile.profile_pic.url}}"
+width=100px class="rounded-circle">
+{% endif%}
+<br><br>
+<form  method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-secondary">Actualizar Perfil</button>
+</form>
+</center>
+{% endblock content %}

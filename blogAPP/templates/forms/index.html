@@ -1,0 +1,67 @@
+{% extends 'AppCoder/base.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+<title>Our Funky HTML Page</title>
+<meta name="description" content="Our first page">
+<meta name="keywords" content="html tutorial template">
+</head>
+<body>
+<form action="/formulario" method="POST">
+    {% csrf_token %}
+{% comment %}<p>
+    Curso
+    <br>
+    <br>
+    Nombre:<input type="text" name="nombre">
+</p>
+<p>
+    Camada:<input type="text" name="camada">
+</p>
+<p>
+    Estudiante
+    <br>
+    <br>
+    Nombre:<input type="text" name="nombre">
+</p>
+<p>
+    Apellido:<input type="text" name="apellido">
+</p>
+<p>
+    Email:<input type="text" name="email">
+</p>
+<p>
+    Profesor
+    <br>
+    <br>
+    Nombre:<input type="text" name="nombre">
+</p>
+<p>
+    Apellido:<input type="text" name="apellido">
+</p>
+<p>
+    Email:<input type="text" name="email">
+</p>
+<p>
+    Profesion:<input type="text" name="profesion">
+</p> {% endcomment %}
+<br>
+<br><br> Curso<br><br>
+
+{{ form.as_table }}
+<br><br>Estudiante<br><br>
+{{ form1.as_table }}
+<br><br>Profesor<br><br>
+{{ form2.as_table }}
+<input type="submit" value="Enviar">
+
+
+
+</form>
+
+
+</body>
+</html>
+{% endblock %}

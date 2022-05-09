@@ -1,0 +1,29 @@
+{% extends 'AppCoder/index.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+<title>Edit Post</title>
+
+</head>
+<body>
+    {% if user.is_authenticated %}
+<h1>Editar Publicacion</h1>
+<br><br>
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{ form.media }}
+    {{ form.as_p }}
+    <button class="btn btn-secondary">Editar
+    </button>
+   
+
+</form>
+{%else%}
+No deberias estar aca
+{%endif%}
+</body>
+</html>
+{% endblock content%}

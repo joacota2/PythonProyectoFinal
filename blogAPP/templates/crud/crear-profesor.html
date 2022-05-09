@@ -1,0 +1,24 @@
+{% extends 'AppCoder/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!doctype html>
+<html>
+<head>
+<title>Edit Table</title>
+<meta name="description" content="Our first page">
+<meta name="keywords" content="html tutorial template">
+</head>
+<body>
+    <h1>Crear Profesor</h1>
+    <a href="{% url 'profesorview' %}">Volver a tabla</a>
+<form action="" method="POST"> 
+    {% csrf_token %}
+    {{form3.as_table}} 
+    <input type="submit" value="Enviar">
+    
+</form>
+</body>
+</html>
+{% endblock %}

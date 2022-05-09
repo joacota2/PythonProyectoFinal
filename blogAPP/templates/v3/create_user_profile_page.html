@@ -1,0 +1,26 @@
+{% extends 'AppCoder/index.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+<title>Perfil</title>
+
+</head>
+<body>
+<h1>Crear  Perfil</h1>
+{% if user.is_authenticated%}
+<br><br>
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{ form.as_p }}
+    <button class="btn btn-secondary">Crear Perfil
+    </button>
+   
+
+</form>
+</body>
+</html>
+{%endif%}
+{% endblock%}

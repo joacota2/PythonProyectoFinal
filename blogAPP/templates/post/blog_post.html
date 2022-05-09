@@ -1,0 +1,36 @@
+{% extends 'AppCoder/index.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+
+<body>
+    {% if user.is_authenticated %}
+    <center>
+        <br><br><br>
+<h1> Publicaciones: </h1>
+
+<a href="{% url 'add_post'%}">Crear Publicacion</a>
+
+
+<ul>{% for post in object_list%}
+    <br>
+<li><a href="{% url 'Article' post.pk %}">
+    Titulo: {{post.title}} | Autor: {{post.author}} | 
+
+{%if user == post.author%}
+    <a href="{% url 'Update' post.pk %}"> Editar</a>
+    <a href="{% url 'Delete' post.pk %}"> Borrar</a><br>
+    {%endif%}
+</li>
+{%endfor%}
+
+
+
+</ul>
+{%else%}
+No deberias estar aca
+{%endif%}
+</center>
+
+</body>
+{% endblock content%}

@@ -1,0 +1,30 @@
+{% extends 'AppCoder/index.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html>
+<head>
+<title>Delete Post</title>
+
+</head>
+<body>
+    {% if user.is_authenticated %}
+<h1>Borrar Publicacion{{post.title}}</h1>
+<br><br>
+
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+<strong>Estas seguro?</strong><br>
+<br>
+    <button class="btn btn-secondary">Borrar
+    </button>
+   
+
+</form>
+{%else%}
+No deberias estar aca
+{%endif%}
+</body>
+</html>
+{% endblock content %}
